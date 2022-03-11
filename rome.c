@@ -59,6 +59,8 @@ int ToDecimal(char *x) {
             a = 1;
             checker = 6;
             break;
+        default:
+            return 0;
         }
         n += a;
         x++;

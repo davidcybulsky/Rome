@@ -12,48 +12,60 @@ int ToDecimal(char *x) {
         case 'M':
             if(checker == 0)
                 a = 1000;
-            else
+            else if(checker == 1)
                 a = 800;
+            else 
+                return 0;
             break;
         case 'D':
             if(checker <= 1) {        
                 a = 500;
                 checker = 1;
             }
-            else
+            else if(checker == 2)
                 a = 300;
+            else 
+                return 0;
             break;
         case 'C':
             if(checker <= 2) {    
                 a = 100;
                 checker = 2;
             }
-            else
+            else if(checker == 3)
                 a = 80;
+            else
+                return 0;
             break;
         case 'L':
             if(checker <= 3) {
                 a = 50;
                 checker = 3;
             }
-            else
+            else if(checker == 4)
                 a = 30;
+            else 
+                return 0;
             break;
         case 'X':
             if(checker <= 4) {         
                 a = 10;
                 checker = 4;
             }
-            else
+            else if(checker == 5)
                 a = 8;
+            else
+                return 0;
             break;
         case 'V':
             if(checker <= 5) {
                 a = 5;
                 checker = 5;
             }
-            else
+            else if(checker == 6)
                 a = 3;
+            else
+                return 0;
             break;
         case 'I':
             a = 1;

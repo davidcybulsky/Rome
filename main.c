@@ -18,7 +18,14 @@ int main (int argc, char **argv) {
                 int tryb = atoi(argv[1]);
                 if(tryb == 1){
                         printf("%s: Pracuje w trybie rzymskie na dziesiętne\n", argv[0]);
-                        printf("%d\n",ToDecimal(argv[2]));
+                        int dec;
+                        if((dec = (ToDecimal(argv[2]))))
+                                printf("%d\n",dec);
+                        else {
+                                write_usage();
+                                fprintf(stderr,"%s: Zła liczba rzymska: %s\n", argv[0], argv[2]);
+                                return EXIT_FAILURE;
+                        }
                 }
                 else if (tryb == 0) {
                         if((atoi(argv[2]) > 3999) || ((atoi(argv[2] )< 0))) {
